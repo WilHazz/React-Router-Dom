@@ -1,33 +1,38 @@
+import { useContext } from "react";
+import { UsuarioContext } from "../context/UsuarioContext";
+
 export const HomeScreen = () => {
+  const { usuario } = useContext(UsuarioContext);
+
   return (
     <div className="container">
       <table className="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Tecnologia</th>
+            <th scope="col">Email</th>
+            <th scope="col">Redes</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row">Diego Martinez</th>
+            <td>.Net8</td>
+            <td>Diegito8@gmail.com</td>
+            <td>@DiegoMartinez</td>
           </tr>
           <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <th scope="row">Mario Gonzales</th>
+            <td>Springboot</td>
+            <td>MarioGz@gmail.com</td>
+            <td>@MarioGon</td>
           </tr>
           <tr>
-            <th scope="row">3</th>
-            <td>John</td>
-            <td>Doe</td>
-            <td>@social</td>
+            <th scope="row">{usuario.nombre}</th>
+            <td>{usuario.tecnologia}</td>
+            <td>{usuario.email}</td>
+            <td>{usuario.redes}</td>
           </tr>
         </tbody>
       </table>
